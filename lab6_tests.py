@@ -64,17 +64,66 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
+    def test_selection_sort_books_1(self):
+        books = []
+        lab6.selection_sort_books(books)
+        self.assertEqual(books, [])
 
+    def test_selection_sort_books_2(self):
+        books = [data.Book("The Great Gatsby", "F. Scott Fitzgerald"),
+            data.Book("1984", "George Orwell"),
+            data.Book("To Kill a Mockingbird", "Harper Lee"),
+            data.Book("A Tale of Two Cities", "Charles Dickens")
+        ]
+        expected = [data.Book("1984", "George Orwell"),
+            data.Book("A Tale of Two Cities", "Charles Dickens"),
+            data.Book("The Great Gatsby", "F. Scott Fitzgerald"),
+            data.Book("To Kill a Mockingbird", "Harper Lee")
+        ]
+        result = lab6.selection_sort_books(books)
+        self.assertEqual(expected,result)
 
     # Part 2
 
+    def test_swap_case_1(self):
+        input = "Hello Everyone"
+        expected = "hELLO eVERYONE"
+        result = lab6.swap_case(input)
+        self.assertEqual(expected,result)
+
+    def test_swap_case_2(self):
+        input = "The Amazing Spiderman"
+        expected = "tHE aMAZING sPIDERMAN"
+        result = lab6.swap_case(input)
+        self.assertEqual(expected,result)
 
     # Part 3
 
+    def test_str_translate_1(self):
+        input = ('hello world','o','0')
+        expected = 'hell0 w0rld'
+        result = lab6.str_translate(input)
+        self.assertEqual(expected,result)
+
+    def test_str_translate_2(self):
+        input = ('abcdefg','o','0')
+        expected = 'abcdefg'
+        result = lab6.str_translate(input)
+        self.assertEqual(expected,result)
 
     # Part 4
 
+    def test_histogram_1(self):
+        input = "hey girl hey"
+        expected = {'hey': 2, 'girl': 1}
+        result = lab6.histogram(input)
+        self.assertEqual(expected,result)
 
+    def test_histogram_2(self):
+        input = "boom clap boom cha cha"
+        expected = {'boom': 2, 'clap': 1, 'cha':2}
+        result = lab6.histogram(input)
+        self.assertEqual(expected,result)
 
 
 
